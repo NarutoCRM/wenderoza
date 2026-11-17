@@ -1,0 +1,117 @@
+/* =========================================================
+   WANDEROZA AIRPORT AUTOCOMPLETE
+   Append to the END of style.css
+   ========================================================= */
+
+.booking-widget,
+.booking-content,
+#flight,
+#flight .tab-pane {
+  overflow: visible !important;
+}
+
+#flight .field-box.airport-autocomplete {
+  position: relative;
+  z-index: 20;
+  overflow: visible;
+}
+
+#flight .field-box.airport-autocomplete:focus-within {
+  z-index: 100;
+}
+
+.airport-suggestions {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  max-height: 320px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #dce5ed;
+  border-radius: 10px;
+  box-shadow: 0 14px 35px rgba(13, 42, 68, .16);
+}
+
+.airport-suggestions[hidden] {
+  display: none !important;
+}
+
+.airport-suggestion {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 15px;
+  border: 0;
+  border-bottom: 1px solid #edf1f5;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: background .18s ease;
+}
+
+.airport-suggestion:last-child {
+  border-bottom: 0;
+}
+
+.airport-suggestion:hover,
+.airport-suggestion.active {
+  background: #eff7ff;
+}
+
+.airport-suggestion-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.airport-suggestion-copy strong {
+  color: #263b50;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.airport-suggestion-copy small {
+  overflow: hidden;
+  color: #82909d;
+  font-size: 11px;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.airport-code {
+  flex: 0 0 auto;
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: #edf5fc;
+  color: #0875bd;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.airport-no-results {
+  padding: 15px;
+  color: #7b8792;
+  font-size: 13px;
+}
+
+@media (max-width: 767px) {
+  .airport-suggestions {
+    max-height: 250px;
+  }
+
+  .airport-suggestion {
+    padding: 11px 12px;
+  }
+
+  .airport-suggestion-copy strong {
+    font-size: 13px;
+  }
+}

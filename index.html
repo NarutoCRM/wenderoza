@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover remarkable journeys with WanderOza Travels. Explore curated holidays, inspiring destinations and personalized travel experiences.">
+  <title>WanderOza Travels | Discover More. Travel Better.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-strip">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span><i class="bi bi-globe2 me-2"></i>Flights, Hotels & Cruises — All in One Place</span>
+      <span class="d-none d-md-inline"><i class="bi bi-telephone me-2"></i>Let’s plan your next escape</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="wanderoza-logo.png" alt="WanderOza Travels logo" class="brand-logo">
+        <span class="brand-name brand-lockup">Wander<span>Oza</span><small>TRAVELS</small></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destinations">Top Deals</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiences">Experiences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#how-it-works">How it works</a></li>
+          <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Why WanderOza</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-brand btn-sm px-4" href="#contact">Plan a trip <i class="bi bi-arrow-up-right ms-1"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="booking-hero" id="home"><div class="booking-hero-overlay"></div><div class="container position-relative booking-hero-inner">
+      <div class="trust-stats">
+        <div><strong>30+</strong><span>travel options to explore</span></div><div><strong>100%</strong><span>personalised assistance</span></div><div><strong>24/7</strong><span>support while you plan</span></div><div><strong>1,000+</strong><span>ways to make memories</span></div>
+      </div>
+      <div class="booking-widget">
+        <ul class="nav booking-main-tabs" role="tablist">
+          <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#flight" type="button"><i class="bi bi-airplane-fill"></i> Flights</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#hotel" type="button"><i class="bi bi-bed-fill"></i> Hotels</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#cruise" type="button"><i class="bi bi-tsunami"></i> Cruises</button></li>
+        </ul>
+        <div class="tab-content booking-content">
+          <div class="tab-pane fade show active" id="flight">
+            <div class="flight-options"><div class="trip-types">
+              <label><input type="radio" name="tripType" value="Round trip" checked> Round-Trip</label>
+              <label><input type="radio" name="tripType" value="One way"> One-Way</label>
+              <a href="#contact">Multi-City Flights</a>
+            </div><label class="cabin-select">Cabin Class: <select name="cabin"><option>Economy</option><option>Premium Economy</option><option>Business</option><option>First Class</option></select></label></div>
+            <form class="enquiry-form booking-fields flight-fields">
+              <div class="field-box"><label>DEPART FROM*</label><div class="field-control"><input name="from" placeholder="Type city..." required><i class="bi bi-arrow-left-right"></i></div></div>
+              <div class="field-box"><label>ARRIVE AT*</label><div class="field-control"><input name="to" placeholder="Type city..." required><i class="bi bi-airplane-engines-fill"></i></div></div>
+              <div class="field-box"><label>DEPARTURE</label><input type="date" name="departure"></div>
+              <div class="field-box return-field"><label>RETURN</label><input type="date" name="return"></div>
+              <div class="field-box"><label>TRAVELLERS</label><select name="travellers"><option>1 Passenger</option><option>2 Passengers</option><option>3 Passengers</option><option>4 Passengers</option><option>5+ Passengers</option></select></div>
+              <button class="btn btn-brand booking-submit" type="submit">Search Flights <i class="bi bi-arrow-right ms-2"></i></button>
+            </form><p class="booking-footnote">Dates and fares are for enquiry purposes. Final availability will be confirmed by our travel team.</p>
+          </div>
+          <div class="tab-pane fade" id="hotel"><div class="tab-title-row"><h3>Find your stay</h3><span><i class="bi bi-building-check"></i> Handpicked stays for every journey</span></div>
+            <form class="enquiry-form booking-fields hotel-fields">
+              <div class="field-box"><label>DESTINATION</label><input name="destination" placeholder="Type city..." required></div>
+              <div class="field-box"><label>CHECK-IN</label><input type="date" name="check-in"></div>
+              <div class="field-box"><label>CHECK-OUT</label><input type="date" name="check-out"></div>
+              <div class="field-box"><label>GUESTS</label><select name="guests"><option>1 Room, 2 Guests</option><option>1 Room, 1 Guest</option><option>1 Room, 3 Guests</option><option>2 Rooms, 4 Guests</option><option>Family / Group</option></select></div>
+              <button class="btn btn-brand booking-submit" type="submit">Find Hotels <i class="bi bi-arrow-right ms-2"></i></button>
+            </form><p class="booking-footnote">Tell us where you want to stay. We’ll help you explore suitable options.</p>
+          </div>
+          <div class="tab-pane fade" id="cruise"><div class="tab-title-row"><h3>Find your cruise</h3><span><i class="bi bi-water"></i> Discover a different kind of escape</span></div>
+            <form class="enquiry-form booking-fields cruise-fields">
+              <div class="field-box"><label>DESTINATION</label><input name="destination" placeholder="Type destination..."></div>
+              <div class="field-box"><label>DEPARTURE PORT</label><input name="departure port" placeholder="Type port..."></div>
+              <div class="field-box"><label>DEPARTURE MONTH</label><select name="departure month"><option>Any Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select></div>
+              <div class="field-box"><label>DURATION</label><select name="duration"><option>Any Duration</option><option>1–3 Nights</option><option>4–6 Nights</option><option>7–9 Nights</option><option>10+ Nights</option></select></div>
+              <div class="field-box"><label>CRUISE LINE</label><select name="cruise line"><option>Any Cruise Line</option><option>Royal Caribbean</option><option>MSC Cruises</option><option>Norwegian Cruise Line</option><option>Other / Not sure</option></select></div>
+              <button class="btn btn-brand booking-submit" type="submit">Search Cruises <i class="bi bi-arrow-right ms-2"></i></button>
+            </form><p class="booking-footnote">Cruise details are enquiry preferences and are subject to availability.</p>
+          </div>
+        </div>
+      </div>
+      <div class="booking-hero-bottom"><div><div class="eyebrow light"><span></span> MAKE YOUR NEXT MOVE</div><h1>Go beyond the <em>ordinary.</em></h1><p>Find flights, stays and cruise experiences for the journey you’ve been dreaming about.</p></div><a class="hero-scroll-link" href="#destinations">Explore destinations <i class="bi bi-arrow-down-right"></i></a></div>
+    </div></section>
+    <section class="top-deals-section section-pad" id="destinations">
+      <div class="container">
+        <div class="deals-heading">
+          <div class="eyebrow justify-content-center"><span></span> TRAVEL MORE. DISCOVER MORE.</div>
+          <h2>Today's <em>Top Deals</em></h2>
+          <p>Find the right way to get away. Tell us what you’re looking for and our team will help you explore your options.</p>
+        </div>
+        <div class="row g-4 deals-grid">
+          <div class="col-md-4">
+            <a class="deal-card" href="#flight" style="--deal-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1000&q=85')">
+              <span class="deal-kicker">GO PLACES</span>
+              <div class="deal-card-content"><span class="deal-category">FLY WITH EASE</span><h3>Flight Deals</h3><span class="deal-action">GET A QUOTE <i class="bi bi-arrow-up-right"></i></span></div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="deal-card" href="#cruise" style="--deal-image:url('https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1000&q=85')">
+              <span class="deal-kicker">SAIL AWAY</span>
+              <div class="deal-card-content"><span class="deal-category">A DIFFERENT KIND OF ESCAPE</span><h3>Cruise Deals</h3><span class="deal-action">GET A QUOTE <i class="bi bi-arrow-up-right"></i></span></div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="deal-card" href="#hotel" style="--deal-image:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=85')">
+              <span class="deal-kicker">STAY SOMEWHERE SPECIAL</span>
+              <div class="deal-card-content"><span class="deal-category">MAKE YOURSELF AT HOME</span><h3>Hotel Deals</h3><span class="deal-action">GET A QUOTE <i class="bi bi-arrow-up-right"></i></span></div>
+            </a>
+          </div>
+        </div>
+        <div class="deals-cta">
+          <div><span class="deals-cta-icon"><i class="bi bi-headset"></i></span><span><strong>Need help finding the right deal?</strong><small>Share your plans and let our team help you get started.</small></span></div>
+          <a class="btn btn-brand" href="#contact">Talk to our travel team <i class="bi bi-arrow-up-right ms-2"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience-section section-pad" id="experiences">
+      <div class="container">
+        <div class="row align-items-end mb-5">
+          <div class="col-lg-7"><div class="eyebrow light"><span></span> TRAVEL YOUR WAY</div><h2>Not just trips.<br><em>Stories to bring home.</em></h2></div>
+          <div class="col-lg-5"><p class="experience-intro">Every traveller is different. Choose the kind of escape that speaks to you, and let’s shape the details together.</p></div>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-4"><div class="experience-card"><i class="bi bi-water"></i><h3>Beach & Island</h3><p>Unhurried days, turquoise waters and a little more sunshine.</p><a href="#contact">Explore escapes <i class="bi bi-arrow-up-right"></i></a></div></div>
+          <div class="col-md-4"><div class="experience-card featured"><i class="bi bi-globe-americas"></i><h3>Adventure & Nature</h3><p>Fresh trails, wild landscapes and the thrill of somewhere new.</p><a href="#contact">Find an adventure <i class="bi bi-arrow-up-right"></i></a></div></div>
+          <div class="col-md-4"><div class="experience-card"><i class="bi bi-buildings"></i><h3>Culture & City</h3><p>Local flavours, iconic sights and the energy of a new city.</p><a href="#contact">Discover culture <i class="bi bi-arrow-up-right"></i></a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="about">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6"><div class="about-visual"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1100&q=85" alt="Beautiful alpine lake and mountains"><div class="floating-note"><i class="bi bi-heart-fill"></i><span><strong>Made around you</strong><small>Travel that feels personal</small></span></div></div></div>
+          <div class="col-lg-6 about-copy"><div class="eyebrow"><span></span> THE WANDEROZA DIFFERENCE</div><h2>Good journeys begin with <em>good people.</em></h2><p>We believe travel should feel exciting from the very first conversation. Tell us what inspires you, and we’ll help bring the right journey together with thoughtful guidance and personal attention.</p>
+            <div class="value-list"><div><i class="bi bi-person-check"></i><span><strong>Personal attention</strong><small>Plans shaped around your interests and pace.</small></span></div><div><i class="bi bi-map"></i><span><strong>Thoughtful planning</strong><small>Clear guidance through the details of your trip.</small></span></div><div><i class="bi bi-headset"></i><span><strong>Here to help</strong><small>A friendly point of contact as you plan.</small></span></div></div>
+            <a href="#contact" class="btn btn-brand mt-4">Get to know us <i class="bi bi-arrow-up-right ms-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section section-pad" id="how-it-works">
+      <div class="container">
+        <div class="section-heading-centered">
+          <div class="eyebrow justify-content-center"><span></span> SIMPLE FROM THE START</div>
+          <h2>Your journey, in <em>three easy steps.</em></h2>
+          <p>From the first idea to the final itinerary, we make planning feel effortless.</p>
+        </div>
+        <div class="row g-4 steps-row">
+          <div class="col-md-4"><article class="step-card"><div class="step-top"><span class="step-number">01</span><span class="step-icon"><i class="bi bi-chat-square-heart"></i></span></div><h3>Tell us what inspires you</h3><p>Share your destination, dates, travel style and the experiences you have in mind.</p><span class="step-link">START WITH AN IDEA <i class="bi bi-arrow-up-right"></i></span></article></div>
+          <div class="col-md-4"><article class="step-card"><div class="step-top"><span class="step-number">02</span><span class="step-icon"><i class="bi bi-map"></i></span></div><h3>Explore your options</h3><p>We help you compare suitable flights, stays and experiences for your journey.</p><span class="step-link">MADE AROUND YOU <i class="bi bi-arrow-up-right"></i></span></article></div>
+          <div class="col-md-4"><article class="step-card"><div class="step-top"><span class="step-number">03</span><span class="step-icon"><i class="bi bi-airplane-engines"></i></span></div><h3>Get ready to go</h3><p>Once your plans are confirmed, get set for a trip worth looking forward to.</p><span class="step-link">LET THE JOURNEY BEGIN <i class="bi bi-arrow-up-right"></i></span></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-band">
+      <div class="container">
+        <div class="proof-band-head"><span>THE WANDEROZA PROMISE</span><p>Everything you need to plan with confidence.</p></div>
+        <div class="row g-0 proof-grid">
+          <div class="col-6 col-lg-3"><div class="proof-item"><i class="bi bi-airplane"></i><strong>Flights</strong><small>Options for your route</small></div></div>
+          <div class="col-6 col-lg-3"><div class="proof-item"><i class="bi bi-buildings"></i><strong>Stays</strong><small>Hotels for your travel style</small></div></div>
+          <div class="col-6 col-lg-3"><div class="proof-item"><i class="bi bi-water"></i><strong>Cruises</strong><small>Journeys beyond the shore</small></div></div>
+          <div class="col-6 col-lg-3"><div class="proof-item"><i class="bi bi-headset"></i><strong>Personal support</strong><small>A real team to guide you</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section section-pad" id="benefits">
+      <div class="container">
+        <div class="section-head d-flex flex-wrap justify-content-between align-items-end gap-3">
+          <div><div class="eyebrow"><span></span> A BETTER WAY TO TRAVEL</div><h2>Little details. <em>Big difference.</em></h2><p>Thoughtful help at every stage, so you can focus on the excitement of going somewhere new.</p></div>
+          <a href="#contact" class="text-link">Plan with our team <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-6 col-lg-4"><article class="benefit-card"><div class="benefit-icon icon-blue"><i class="bi bi-stars"></i></div><h3>Plans that feel personal</h3><p>Your preferences come first. Shape a trip around your pace, priorities and budget.</p><span class="benefit-index">01 / PERSONAL</span></article></div>
+          <div class="col-md-6 col-lg-4"><article class="benefit-card"><div class="benefit-icon icon-green"><i class="bi bi-wallet2"></i></div><h3>Options made clearer</h3><p>Explore travel choices with helpful guidance, without the overwhelm of endless tabs.</p><span class="benefit-index">02 / CLARITY</span></article></div>
+          <div class="col-md-6 col-lg-4"><article class="benefit-card"><div class="benefit-icon icon-orange"><i class="bi bi-shield-check"></i></div><h3>Guidance you can trust</h3><p>Get clear information about your options, inclusions and next steps before confirming.</p><span class="benefit-index">03 / CONFIDENCE</span></article></div>
+          <div class="col-md-6 col-lg-4"><article class="benefit-card"><div class="benefit-icon icon-purple"><i class="bi bi-clock-history"></i></div><h3>Less time planning</h3><p>Bring your travel questions together and get help moving from idea to itinerary.</p><span class="benefit-index">04 / SIMPLICITY</span></article></div>
+          <div class="col-md-6 col-lg-4"><article class="benefit-card"><div class="benefit-icon icon-cyan"><i class="bi bi-globe-americas"></i></div><h3>More ways to explore</h3><p>Consider city breaks, beach escapes, cultural discoveries and cruise holidays.</p><span class="benefit-index">05 / INSPIRATION</span></article></div>
+          <div class="col-md-6 col-lg-4"><article class="benefit-card benefit-dark"><div class="benefit-icon"><i class="bi bi-chat-dots"></i></div><h3>Real conversations</h3><p>Tell us what matters to you. We’ll help you work through the details.</p><a href="#contact">Talk to WanderOza <i class="bi bi-arrow-up-right"></i></a></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews-section section-pad" id="reviews">
+      <div class="container">
+        <div class="reviews-top">
+          <div><div class="eyebrow light"><span></span> TRAVEL IS BETTER SHARED</div><h2>Stories worth <em>coming back to.</em></h2><p>We believe every great journey deserves a thoughtful experience from start to finish.</p></div>
+          <div class="review-side-note"><i class="bi bi-quote"></i><span>Real experiences.<br>Real traveller voices.</span></div>
+        </div>
+        <div class="row g-3 review-placeholder-row">
+          <div class="col-md-4"><article class="review-card"><div class="review-card-top"><span class="review-stars">★★★★★</span><span class="review-label">REVIEW SLOT 01</span></div><div class="review-quote">“Add a verified customer review about their booking or travel planning experience here.”</div><div class="review-person"><span class="review-avatar">01</span><span><strong>Customer name</strong><small>Destination / Trip type</small></span></div></article></div>
+          <div class="col-md-4"><article class="review-card review-card-featured"><div class="review-card-top"><span class="review-stars">★★★★★</span><span class="review-label">REVIEW SLOT 02</span></div><div class="review-quote">“Replace this sample text with genuine feedback from a WanderOza traveller.”</div><div class="review-person"><span class="review-avatar">02</span><span><strong>Customer name</strong><small>Destination / Trip type</small></span></div></article></div>
+          <div class="col-md-4"><article class="review-card"><div class="review-card-top"><span class="review-stars">★★★★★</span><span class="review-label">REVIEW SLOT 03</span></div><div class="review-quote">“Use an approved review that reflects the real service and experience provided.”</div><div class="review-person"><span class="review-avatar">03</span><span><strong>Customer name</strong><small>Destination / Trip type</small></span></div></article></div>
+        </div>
+        <p class="reviews-editor-note"><i class="bi bi-info-circle me-1"></i>Review cards are design placeholders. Add genuine, permission-approved customer reviews before publishing.</p>
+      </div>
+    </section>
+
+    <section class="closing-cta">
+      <div class="container"><div class="closing-cta-inner"><div><span class="eyebrow light"><span></span> YOUR NEXT CHAPTER AWAITS</span><h2>Somewhere new is<br><em>closer than you think.</em></h2><p>Tell us what you’re dreaming of. We’ll help you take the first step.</p></div><a href="#contact" class="btn btn-light btn-lg">Let’s plan your trip <i class="bi bi-arrow-up-right ms-2"></i></a></div></div>
+    </section>
+
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="row g-5 footer-main">
+        <div class="col-lg-5"><a class="navbar-brand d-inline-flex align-items-center gap-2 mb-3" href="#"><img src="wanderoza-logo.png" class="brand-logo" alt=""><span class="brand-name brand-lockup text-white">Wander<span>Oza</span><small>TRAVELS</small></span></a><p class="footer-about">Discover more of the world with thoughtful travel planning and experiences made around you.</p><div class="socials"><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a></div></div>
+        <div class="col-6 col-lg-2"><h5>Explore</h5><a href="#destinations">Top Deals</a><a href="#experiences">Experiences</a><a href="#about">About us</a></div>
+        <div class="col-6 col-lg-2"><h5>Plan</h5><a href="#contact">Holiday packages</a><a href="#contact">Flights</a><a href="#contact">Hotels</a></div>
+        <div class="col-lg-3"><h5>Let’s talk travel</h5><p class="footer-contact">Have a destination in mind? Tell us a little about it.</p><a class="footer-email" href="mailto:contact@wanderozatravels.com">contact@wanderozatravels.com</a><a href="#contact" class="btn btn-brand mt-3">Send an enquiry <i class="bi bi-arrow-up-right ms-1"></i></a></div>
+      </div>
+      <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2"><span>© 2026 WanderOza Travels. All rights reserved.</span><span>Made for WanderOza Travels</span></div>
+    </div>
+  </footer>
+  <a class="whatsapp-float" href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
