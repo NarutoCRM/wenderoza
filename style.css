@@ -1995,7 +1995,7 @@ footer {
   letter-spacing: 3px;
 }
 .site-nav .brand-logo, footer .brand-logo {
-  width: 48px;
+  width: 80px;
   height: 48px;
   flex: 0 0 48px;
   object-fit: contain;
