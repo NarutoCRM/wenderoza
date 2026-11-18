@@ -2157,3 +2157,46 @@ body {
     font-size: 11px;
   }
 }
+
+/* =========================================================
+   WANDEROZA — PROFESSIONAL FLIGHT ENQUIRY MODAL
+   ========================================================= */
+.flight-enquiry-modal .modal-dialog { max-width: 690px; }
+.flight-enquiry-modal .modal-content { overflow: hidden; border: 0; border-radius: 20px; box-shadow: 0 24px 80px rgba(7, 35, 62, .24); }
+.flight-enquiry-modal .modal-header { position: relative; align-items: flex-start; padding: 30px 34px 24px; border: 0; background: linear-gradient(125deg, #082b4d, #075f99); color: #fff; }
+.flight-enquiry-modal .modal-header .btn-close { filter: invert(1); opacity: .85; }
+.flight-enquiry-modal .modal-eyebrow { display: block; margin-bottom: 9px; color: #8edcff; font-size: 10px; font-weight: 800; letter-spacing: 1.7px; }
+.flight-enquiry-modal .modal-title { margin: 0; color: #fff; font-family: Manrope, sans-serif; font-size: clamp(23px, 4vw, 30px); font-weight: 800; }
+.flight-enquiry-modal .modal-subtitle { margin: 8px 0 0; color: rgba(255,255,255,.78); font-size: 14px; }
+.flight-enquiry-modal .modal-body { padding: 26px 34px 30px; }
+.flight-summary-card { margin-bottom: 24px; padding: 17px 18px; border: 1px solid #dceaf5; border-radius: 13px; background: #f5f9fd; }
+.summary-heading { display: flex; align-items: center; gap: 9px; margin-bottom: 14px; color: #086eae; font-size: 13px; font-weight: 800; }
+.summary-heading i { font-size: 17px; }
+.flight-summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px 16px; }
+.flight-summary-item { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.flight-summary-item small { color: #8090a0; font-size: 10px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; }
+.flight-summary-item strong { overflow-wrap: anywhere; color: #193a58; font-size: 13px; font-weight: 700; }
+.lead-label { display: block; margin-bottom: 7px; color: #263e54; font-size: 12px; font-weight: 800; }
+.lead-input { min-height: 49px; padding: 12px 14px; border: 1px solid #d8e2eb; border-radius: 9px; color: #18344e; font-size: 14px; box-shadow: none !important; }
+.lead-input:focus { border-color: #0796d2; }
+.lead-input::placeholder { color: #9aa8b5; }
+.lead-consent { display: flex; align-items: flex-start; gap: 9px; margin-top: 18px; color: #6d7d8c; font-size: 12px; line-height: 1.5; }
+.lead-consent input { flex: 0 0 auto; width: 15px; height: 15px; margin-top: 2px; accent-color: #078bc7; }
+.lead-honeypot { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; }
+.modal-actions { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 22px; padding-top: 19px; border-top: 1px solid #edf1f5; }
+.modal-actions > span { color: #7b8996; font-size: 11px; }
+.modal-actions > span i { margin-right: 4px; color: #15966b; }
+.lead-submit { min-height: 48px; padding: 11px 22px; white-space: nowrap; }
+.lead-submit:disabled { cursor: wait; opacity: .7; }
+.lead-form-feedback { display: none; margin-top: 14px; padding: 11px 13px; border-radius: 8px; font-size: 13px; }
+.lead-form-feedback.is-success, .lead-form-feedback.is-error { display: block; }
+.lead-form-feedback.is-success { background: #eaf8f1; color: #16754d; }
+.lead-form-feedback.is-error { background: #fff0ef; color: #b42318; }
+@media (max-width: 575px) {
+  .flight-enquiry-modal .modal-dialog { margin: 12px; }
+  .flight-enquiry-modal .modal-header { padding: 24px 21px 20px; }
+  .flight-enquiry-modal .modal-body { padding: 20px 21px 23px; }
+  .flight-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .modal-actions { align-items: stretch; flex-direction: column; }
+  .lead-submit { width: 100%; }
+}

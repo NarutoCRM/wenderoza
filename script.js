@@ -416,32 +416,109 @@ document.addEventListener('DOMContentLoaded', () => {
   addAirportAutocomplete(arrivalInput);
 
   /* ---------------------------------------------------------
-     2. ENQUIRY FORMS — OPEN EMAIL DRAFT
+     2. FLIGHT LEAD POPUP + OTHER ENQUIRY FORMS
   --------------------------------------------------------- */
 
+  const flightForm = document.querySelector('#flight .enquiry-form');
+  const leadForm = document.querySelector('#flightLeadForm');
+  const leadModalElement = document.getElementById('flightEnquiryModal');
+  const leadSummary = document.getElementById('flightEnquirySummary');
+  const leadFeedback = document.getElementById('leadFormFeedback');
+  let currentFlightSearch = {};
+
+  function getFlightSearchDetails(form) {
+    const details = Object.fromEntries(new FormData(form).entries());
+    const trip = document.querySelector('input[name="tripType"]:checked');
+    const cabin = document.querySelector('.cabin-select select');
+    details['Trip type'] = trip ? trip.value : 'Round trip';
+    details['Cabin class'] = cabin ? cabin.value : 'Economy';
+    return details;
+  }
+
+  function renderFlightSummary(details) {
+    const labels = { from: 'From', to: 'To', departure: 'Departure', return: 'Return', travellers: 'Travellers', 'Trip type': 'Trip type', 'Cabin class': 'Cabin class' };
+    leadSummary.replaceChildren();
+    Object.entries(details).forEach(([key, value]) => {
+      if (!String(value || '').trim()) return;
+      const item = document.createElement('div');
+      item.className = 'flight-summary-item';
+      const label = document.createElement('small');
+      label.textContent = labels[key] || key;
+      const valueNode = document.createElement('strong');
+      valueNode.textContent = value;
+      item.append(label, valueNode);
+      leadSummary.append(item);
+    });
+  }
+
+  if (flightForm && leadModalElement && window.bootstrap) {
+    flightForm.addEventListener('submit', event => {
+      event.preventDefault();
+      if (!flightForm.reportValidity()) return;
+      currentFlightSearch = getFlightSearchDetails(flightForm);
+      renderFlightSummary(currentFlightSearch);
+      leadFeedback.textContent = '';
+      leadFeedback.className = 'lead-form-feedback';
+      bootstrap.Modal.getOrCreateInstance(leadModalElement).show();
+    });
+  }
+
+  if (leadForm) {
+    leadForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (!leadForm.reportValidity()) return;
+      const submitButton = leadForm.querySelector('.lead-submit');
+      const submitLabel = submitButton.querySelector('.submit-label');
+      const payload = {
+        name: leadForm.elements.name.value.trim(),
+        email: leadForm.elements.email.value.trim(),
+        phone: leadForm.elements.phone.value.trim(),
+        consent: leadForm.elements.consent.checked,
+        website: leadForm.elements.website.value,
+        enquiryType: 'Flight enquiry',
+        searchDetails: currentFlightSearch
+      };
+      submitButton.disabled = true;
+      submitLabel.textContent = 'Sending enquiry…';
+      leadFeedback.textContent = '';
+      leadFeedback.className = 'lead-form-feedback';
+      try {
+        const response = await fetch('send-enquiry.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        if (!response.ok || !result.success) throw new Error(result.message || 'We could not send your enquiry. Please try again.');
+        leadFeedback.textContent = 'Thank you! Your enquiry has been sent. Our travel team will contact you shortly.';
+        leadFeedback.classList.add('is-success');
+        leadForm.reset();
+        window.setTimeout(() => {
+          bootstrap.Modal.getOrCreateInstance(leadModalElement).hide();
+          leadFeedback.textContent = '';
+        }, 2200);
+      } catch (error) {
+        leadFeedback.textContent = error.message || 'Something went wrong. Please try again or call our travel team.';
+        leadFeedback.classList.add('is-error');
+      } finally {
+        submitButton.disabled = false;
+        submitLabel.textContent = 'Send my enquiry';
+      }
+    });
+  }
+
+  // Keep the existing email-draft behaviour for hotel and cruise enquiries.
   document.querySelectorAll('.enquiry-form').forEach(form => {
+    if (form === flightForm) return;
     form.addEventListener('submit', event => {
       event.preventDefault();
-
+      if (!form.reportValidity()) return;
       const rows = [...new FormData(form).entries()]
         .filter(([key, value]) => String(value).trim())
         .map(([key, value]) => `${key}: ${value}`);
-
-      const trip = document.querySelector('input[name="tripType"]:checked');
-      if (trip && form.closest('#flight')) rows.unshift(`Trip type: ${trip.value}`);
-
-      const cabin = document.querySelector('.cabin-select select');
-      if (cabin && form.closest('#flight')) rows.push(`Cabin class: ${cabin.value}`);
-
       const subject = encodeURIComponent('WanderOza Travels - Travel Enquiry');
-      const body = encodeURIComponent(
-        'Hello WanderOza Travels,\n\nI would like to enquire about these travel plans:\n\n' +
-        rows.join('\n') +
-        '\n\nPlease contact me with available options.'
-      );
-
-      window.location.href =
-        `mailto:hello@wanderozatravels.com?subject=${subject}&body=${body}`;
+      const body = encodeURIComponent('Hello WanderOza Travels,\n\nI would like to enquire about these travel plans:\n\n' + rows.join('\n') + '\n\nPlease contact me with available options.');
+      window.location.href = `mailto:hello@wanderozatravels.com?subject=${subject}&body=${body}`;
     });
   });
 
